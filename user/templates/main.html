@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<h1> Main Page </h1>
+
+<div>
+    <p>
+        {% if request.user.is_authenticated %}
+    <div><a href="{% url 'vacancy:vacancy_list' %}"> Vacancy today </a></div>
+    <div><a href="{% url 'vacancy:resume_list' %}"> Resume today </a></div>
+
+    <a href="{% url 'user:logout' %}"> Out </a>
+    {% else %}
+
+    <a href="{% url 'user:registration' %}">Registration</a>
+    <a href="{% url 'user:login' %}"> LogIn </a>
+    {% endif %}
+
+    </p>
+</div>
+
+</body>
+</html>

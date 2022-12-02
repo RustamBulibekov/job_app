@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+</head>
+<body>
+<h1>Resume</h1>
+<div>
+    <p>
+        <h2>Add new resume </h2>
+        <a href="{% url 'vacancy:add_resume' %}">Add</a>
+    </p>
+</div>
+
+
+<div>
+    {% if resume %}
+    <p>{{ resume.title }} </p>
+    {% else %}
+    <p>Empty</p>
+    {% endif %}
+</div>
+</body>
+</html>
